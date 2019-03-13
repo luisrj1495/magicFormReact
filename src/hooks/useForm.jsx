@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { checkValidity } from '../../utils/form'
+import { checkValidation } from '../utils/validations'
 
 const useForm = fieldForm => {
   const [fieldState, setFieldState] = useState({ ...fieldForm })
@@ -41,7 +41,7 @@ const useForm = fieldForm => {
 
   const handlerOnChangeForm = (ev, id) => {
     const inputValue = ev.target.value
-    const validation = checkValidity(inputValue, fieldState[id].validation)
+    const validation = checkValidation(inputValue, fieldState[id].validation)
     const formData = {
       ...fieldState,
       [id]: {
