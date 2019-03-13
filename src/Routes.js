@@ -8,9 +8,9 @@ const Routes = props => {
 	return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" render={props => <HookTest {...props} />} />
-        <Route path="/hoc" render={props => <HocTest {...props} />} />
-        <Redirect to="/" />
+        {/* <Route path="/" render={props => <HookTest {...props} />} /> */}
+        <Route path="/puta" render={props => <HocTest {...props} />} />
+   
       </Switch>
     </BrowserRouter>
 	)

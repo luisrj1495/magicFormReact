@@ -57,13 +57,14 @@ const withForm = formInitialData => WrappedComponent => {
       setFormIsValid(false)
     }
 
+    console.log("data")
+
     return (
       useMemo(() => (
         <WrappedComponent
           { ...props }
           isValidForm={ formIsValid }
           onChangeForm={ handlerOnChangeForm }
-          onSubmitForm={ handlerOnSubmitForm }
           onRenderElements={ arrayElementsForm }
           onResetForm={ onResetForm }
           getJsonData={ handlerOnSubmitJSON }

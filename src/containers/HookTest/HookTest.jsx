@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import fieldsForm from '../../utils/fields'
 import Input from '../../components/Input'
@@ -22,7 +21,7 @@ const HookTest = props => {
             errorMessage={ formElement.config.errorMessage }
           />
         ))}
-        <button disabled={ !formIsValid } type="submit" color="primary">
+        <button disabled={ !formIsValid } type="button">
           Save
         </button>
       </form>
@@ -35,6 +34,7 @@ const HookTest = props => {
     <div>
       <h2>Using Hooks</h2>
       { renderForm() }
+      <br />
       { JSON.stringify(onSubmitJSON()) }
     </div>
   )
