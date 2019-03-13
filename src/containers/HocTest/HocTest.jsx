@@ -1,4 +1,5 @@
-import React,{ useState } from 'react'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import fieldsForm from '../../utils/fields'
 import Input from '../../components/Input'
@@ -7,6 +8,7 @@ import withForm from '../../hoc/withForm'
 const HocTest = props => {
   const renderForm = () => {
     let form = (
+      <div className="form-style-2">
       <form>
         {props.onRenderElements().map(formElement => (
           <Input
@@ -23,13 +25,15 @@ const HocTest = props => {
           Save
         </button>
       </form>
+      </div>
     )
 
     return form
   }
 
   return (
-    <div>
+    <div  className="container">
+      <NavLink to="/"> GO TO HOOKS </NavLink>
       <h2>Using HOC</h2>
       { renderForm() }
       <br />

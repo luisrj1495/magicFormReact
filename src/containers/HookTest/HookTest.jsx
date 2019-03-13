@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import fieldsForm from '../../utils/fields'
 import Input from '../../components/Input'
@@ -9,6 +10,7 @@ const HookTest = props => {
 
   const renderForm = () => {
     let form = (
+      <div className="form-style-2">
       <form>
         {renderElementsForm().map(formElement => (
           <Input
@@ -25,13 +27,16 @@ const HookTest = props => {
           Save
         </button>
       </form>
+
+      </div>
     )
 
     return form
   }
 
   return (
-    <div>
+    <div className="container">
+      <NavLink to="/hoc"> GO TO HOC </NavLink>
       <h2>Using Hooks</h2>
       { renderForm() }
       <br />

@@ -13,7 +13,6 @@ export default {
       isText: true
     },
     valid: false,
-    touched: false,
     errorMessage: null
   },
   lastName: {
@@ -30,7 +29,6 @@ export default {
       isText: true
     },
     valid: false,
-    touched: false,
     errorMessage: null
   },
   email: {
@@ -47,7 +45,6 @@ export default {
       isEmail: true
     },
     valid: false,
-    touched: false,
     errorMessage: null
   },
   cellphone: {
@@ -61,10 +58,31 @@ export default {
     value: '',
     validation: {
       required: true,
-      isNumber: true
+      isNumber: true,
+      minLength: 8
     },
     valid: false,
-    touched: false,
+    errorMessage: null
+  },
+  state: {
+    elementLabel: 'State',
+    elementType: 'select',
+    elementConfig: {
+      name: 'state',
+      options: [
+        {
+          label: 'Active',
+          value: true
+        },
+        {
+          label: 'Inactive',
+          value: false
+        }
+      ]
+    },
+    value: true,
+    validation: {},
+    valid: true,
     errorMessage: null
   }
 }

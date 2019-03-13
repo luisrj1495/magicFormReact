@@ -47,7 +47,6 @@ const useForm = fieldForm => {
       [id]: {
         ...fieldState[id],
         value: inputValue,
-        touched: true,
         valid: validation.isValid,
         errorMessage: validation.error
       }
@@ -62,7 +61,6 @@ const useForm = fieldForm => {
       loadForm[formElement] = {
         ...fieldState[formElement],
         value: data[formElement] || '',
-        touched: true,
         valid: true
       }
     }

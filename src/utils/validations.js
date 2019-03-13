@@ -12,23 +12,23 @@ export const checkValidation = (value, rules) => {
   if (rules.required) {
     isValid = value.trim() !== '' && isValid
     if (!isValid) {
-      error = 'Este campo es requerido'
+      error = 'This field is required'
     }
   }
 
   if (rules.minLength) {
     isValid = value.length >= rules.minLength && isValid
     if (!isValid) {
-      error = `Este campo es debe tener mínimo de ${
+      error = `This field should minimum ${
         rules.minLength
-      } caracteres `
+      } characters `
     }
   }
 
   if (rules.maxLength) {
     isValid = value.length <= rules.maxLength && isValid
     if (!isValid) {
-      error = `Este campo es debe tener máximo de ${rules.minLength} caracteres`
+      error = `This field should maximum ${rules.minLength} characters`
     }
   }
 
@@ -36,7 +36,7 @@ export const checkValidation = (value, rules) => {
     const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     isValid = pattern.test(value) && isValid
     if (!isValid) {
-      error = `Este correo no es valido `
+      error = `This email is not valid`
     }
   }
 
@@ -44,13 +44,13 @@ export const checkValidation = (value, rules) => {
     const pattern = /^\d+$/
     isValid = pattern.test(value) && isValid
     if (!isValid) {
-      error = `Esto no es un numero `
+      error = `This isn't a number`
     }
   }
 
   if (pattern.test(value)) {
     isValid = false
-    error = 'Este campo contiene caracteres no permitidos'
+    error = 'This field has characters not permit'
   }
 
   return {
